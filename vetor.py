@@ -63,6 +63,11 @@ class Vetor:
 			return all([si == oi for si, oi in zip(self.content, other.content)])
 
 
+def zeros(num):
+	return Vetor([0 for i in range(num)])
+
+def ones(num):
+	return Vetor([1 for i in range(num)])
 
 
 class errorVectors(Exception):
