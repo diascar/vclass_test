@@ -36,6 +36,12 @@ class Vetor:
 				raise errorVectors()
 			return sum([si * oi for si,oi in zip(self.content, other.content)])
 
+	def haddamard_product(self, other):
+		if isinstance(other, Vetor):
+			if self.size != other.size:
+				raise errorVectors()
+			return Vetor([si * oi for si,oi in zip(self.content, other.content)])
+
 	def __pow__(self, scalar):
 		if isinstance(scalar, (int, float)):
 			return Vetor(si**scalar for si in self.content)
